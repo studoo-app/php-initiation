@@ -1,8 +1,8 @@
 <?php
 // Variables pour le calcul d'IMC
-$nom_personne = "Julie Moreau";
-$poids = 65; // en kg
-$taille = 1.70; // en mètres
+$nom_personne = "Julien PECHBERTY";
+$poids = 165; // en kg
+$taille = 1.74; // en mètres
 
 // Calcul de l'IMC
 $imc = $poids / ($taille * $taille);
@@ -12,11 +12,15 @@ $imc_formate = number_format($imc, 2);
 
 // Détermination du statut selon l'IMC
 $statut_imc = "";
+$status_class = "";
 if ($imc < 25) {
+    $status_class = "imc-valeur-under";
     $statut_imc = "L'IMC est inférieur à 25 (poids normal).";
 } elseif ($imc == 25) {
+    $status_class = "imc-valeur-ok";
     $statut_imc = "L'IMC est exactement égal à 25 (limite supérieure normale).";
 } else {
+    $status_class = "imc-valeur-over";
     $statut_imc = "L'IMC est supérieur à 25 (surpoids).";
 }
 ?>
@@ -61,10 +65,22 @@ if ($imc < 25) {
             margin: 20px 0;
             text-align: center;
         }
-        .imc-valeur {
+        .imc-valeur-under {
             font-size: 36px;
             font-weight: bold;
             color: #ffd700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        .imc-valeur-ok {
+            font-size: 36px;
+            font-weight: bold;
+            color: lawngreen;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        .imc-valeur-over {
+            font-size: 36px;
+            font-weight: bold;
+            color: red;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
         .info {
@@ -86,7 +102,7 @@ if ($imc < 25) {
 
     <div class="resultat">
         <h2>📈 Résultat du calcul</h2>
-        <div class="imc-valeur"><?php echo $imc_formate; ?></div>
+        <div id="imc" class="<?php echo $status_class ?>"><?php echo $imc_formate; ?></div>
         <p><strong>IMC (Indice de Masse Corporelle)</strong></p>
         <p><?php echo $statut_imc; ?></p>
     </div>

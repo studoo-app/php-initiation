@@ -1,4 +1,7 @@
 <?php
+
+// https://www.php.net/manual/en/ref.strings.php
+
 // Variables de base
 $nom = "Dupont";
 $prenom = "Marie";
@@ -7,6 +10,7 @@ $code_postal = "69000";
 
 // Construction des phrases par concaténation
 $phrase1 = "Bonjour " . $prenom . " " . $nom . " !";
+$phrase1_1 = "Bonjour $prenom $nom";
 $phrase2 = "Vous habitez à " . $ville . " (" . $code_postal . ")";
 
 // Pour le nom en majuscules, utilisation de strtoupper()
@@ -21,7 +25,7 @@ echo $phrase3 . "<br><br>";
 $adresse_complete = $prenom . " " . $nom . " réside au " . $code_postal . " " . $ville . ".";
 echo "Adresse complète : " . $adresse_complete;
 
-echo " ========================================= <br>";
+echo "<br> ========================================= <br>";
 
 // Variable sous forme de chaîne
 $chiffre_ventes = "15000";
