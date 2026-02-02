@@ -1,7 +1,7 @@
 <?php
 // Variables pour le calcul d'IMC
 $nom_personne = "Julien PECHBERTY";
-$poids = 165; // en kg
+$poids = 65; // en kg
 $taille = 1.74; // en mètres
 
 // Calcul de l'IMC

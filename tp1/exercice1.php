@@ -19,7 +19,7 @@ echo "Type de suis_etudiant : " . gettype($suis_etudiant) . "<br><br>";
 
 // Phrase de présentation complète
 $presentation = "Je m'appelle " . $mon_prenom . ", j'ai " . $mon_age . " ans, je mesure " . $ma_taille . "m et je suis étudiant.";
-echo $presentation;
+echo $presentation."<br>";
 
 echo " ========================================= <br>";
 
