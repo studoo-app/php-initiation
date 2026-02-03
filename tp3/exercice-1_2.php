@@ -1,6 +1,6 @@
 <?php
 
-$notes = [12, 9, 14, 7, 18, 11, 15, 10, 8, 13];
+$notes = [12, 9, 14, 7, 18, 11, 16, 5, 20, 13,8, 10];
 $bonus = 2;
 
 $maxNote = max($notes);
@@ -29,7 +29,7 @@ $notesUpper10 = count(array_filter($notes, function($note){return $note > 10;}))
 //    $notesWithBonus[] = $newNote;
 //}
 
-$notesWithBonus = array_map(function($note) use ($bonus, $maxNote) {
+$notesWithBonus = array_map(function($note) use ($bonus) {
     $newNote = $note + $bonus;
     return $newNote <= 20 ? $newNote : 20;
 }, $notes);

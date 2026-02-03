@@ -13,6 +13,7 @@ $students = [
     "SIO2A" => ["alice", "bob", "charlie", "david", "eve", "frank", "grace", "heidi"],
     "SIO2B" => ["ivan", "judy", "karen", "leo", "mallory", "nancy", "oscar", "peggy"]
 ];
+
 if(array_key_exists($section, $students)) {
     echo $students[$section][array_rand($students[$section], 1)];
 }else{

@@ -8,26 +8,23 @@ $utilisateur = [
     "ville"=>"Paris"
 ];
 
-foreach ($utilisateur as $cle => $valeur) {
-    echo "$cle : $valeur<br>";
+function loop($array){
+    foreach ($array as $cle => $valeur) {
+        echo "$cle : $valeur<br>";
+    }
+    echo "<br>";
 }
-echo "<br>";
+
+loop($utilisateur);
+
 $utilisateur["telephone"] =  "0102030405";
 
-foreach ($utilisateur as $cle => $valeur) {
-    echo "$cle : $valeur<br>";
-}
+loop($utilisateur);
 
-echo "<br>";
+$utilisateur["age"] =  19;
 
-$utilisateur["age"] =  "19";
-
-foreach ($utilisateur as $cle => $valeur) {
-    echo "$cle : $valeur<br>";
-}
-echo "<br>";
+loop($utilisateur);
 
 unset($utilisateur["email"]);
-foreach ($utilisateur as $cle => $valeur) {
-    echo "$cle : $valeur<br>";
-}
+
+loop($utilisateur);
