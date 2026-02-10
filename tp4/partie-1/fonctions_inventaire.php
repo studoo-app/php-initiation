@@ -26,7 +26,7 @@ function trouverParIP(array $machines, string $ip): ?array {
     return null;
 }
 
-function compterParType($machines) {
+function compterParType(array $machines): array {
     $compteurs = [];
     foreach ($machines as $machine) {
         $type = $machine['type'];

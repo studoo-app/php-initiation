@@ -17,13 +17,19 @@ function obtenirPlageAges(array $equipements) : array {
 
 
 function compterObsoletes($ages, $seuil = 5) {
-    $compteur = 0;
-    foreach ($ages as $age) {
-        if ($age >= $seuil) {
-            $compteur++;
-        }
-    }
-    return $compteur;
+    //Métode 1
+    //    $compteur = 0;
+//    foreach ($ages as $age) {
+//        if ($age >= $seuil) {
+//            $compteur++;
+//        }
+//    }
+//    return $compteur;
+
+    //Méthode 2
+    return count(array_filter($ages, function($age) use ($seuil) {
+        return $age >= $seuil;
+    }));
 }
 
 function analyserParc(array $equipements) {

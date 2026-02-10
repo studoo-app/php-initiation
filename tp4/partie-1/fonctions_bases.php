@@ -12,7 +12,6 @@ function calculerAgeEquipement(int $anneeAchat): int
     return new DateTime("now")->diff(new DateTime("{$anneeAchat}-01-01"))->y;
 }
 
-
 function calculerFinGarantie(int $anneeAchat, int $dureeGarantie = 3): int
 {
     //Méthode 1
@@ -54,7 +53,7 @@ function genererCodeInventaire(string $type, int $numero): string
     ];
 
     $prefix = $prefixes[$type] ?? 'UNK';
-    return "{$prefix}-{$numero}";
+    return "$prefix-$numero";
 }
 
 
