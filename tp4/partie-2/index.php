@@ -10,7 +10,7 @@ afficherTitre("Gestion du parc informatique");
 // Test calculs
 echo "<h2>Calculs</h2>";
 echo "Âge d'un équipement de 2020 : " . calculerAgeEquipement(2020) . " ans<br>";
-echo "Fin garantie (01/01/2024) : " . calculerFinGarantie("2024-01-01") . "<br>";
+echo "Fin garantie (01/01/2024) : " . calculerFinGarantie(2024) . "<br>";
 
 // Test validation
 echo "<h2>Validation réseau</h2>";

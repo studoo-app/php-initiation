@@ -18,24 +18,31 @@ function filtrerParType(array $machines, string $typeRecherche): array {
 }
 
 function trouverParIP(array $machines, string $ip): ?array {
-    foreach ($machines as $machine) {
-        if ($machine['ip'] === $ip) {
-            return $machine;
-        }
-    }
-    return null;
+    //Méthode 1
+//    foreach ($machines as $machine) {
+//        if ($machine['ip'] === $ip) {
+//            return $machine;
+//        }
+//    }
+//    return null;
+
+    //Méthode 2
+    return array_filter($machines, function($machine) use ($ip) {
+        return $machine['ip'] === $ip;
+    });
 }
 
 function compterParType(array $machines): array {
     $compteurs = [];
     foreach ($machines as $machine) {
         $type = $machine['type'];
-        if (!isset($compteurs[$type])) {
+        if (!array_key_exists($type, $compteurs)) {
             $compteurs[$type] = 0;
         }
         $compteurs[$type]++;
     }
     return $compteurs;
+
 }
 
 //////// TESTS //////////

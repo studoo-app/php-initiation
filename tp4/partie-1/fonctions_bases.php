@@ -15,7 +15,7 @@ function calculerAgeEquipement(int $anneeAchat): int
 function calculerFinGarantie(int $anneeAchat, int $dureeGarantie = 3): int
 {
     //Méthode 1
-    //return ($anneeAchat + $dureeGarantie) - date("Y");
+    //return $anneeAchat + $dureeGarantie;
 
     //Méthode 2
     $date = new DateTime("{$anneeAchat}-01-01");

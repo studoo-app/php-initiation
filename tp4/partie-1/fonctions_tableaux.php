@@ -2,17 +2,30 @@
 
 
 function calculerAgesMoyen(array $equipements): float|int {
+
+    //Version tableau simple
     if (empty($equipements)) {
         return 0;
     }
     return array_sum($equipements) / count($equipements);
+
+    //Version tableau associatf avec au moins une cle age dans chaque élément
+    //return array_sum(array_column($equipements, 'age')) / count($equipements);
 }
 
 function obtenirPlageAges(array $equipements) : array {
+
+    //verion tableau simple
     return [
         'min' => min($equipements),
         'max' => max($equipements)
     ];
+
+    //version tableau associatif avec au moins une cle age dans chaque élément
+//    return [
+//        'min' => min(array_column($equipements, 'age')),
+//        'max' => max(array_column($equipements, 'age'))
+//    ];
 }
 
 
